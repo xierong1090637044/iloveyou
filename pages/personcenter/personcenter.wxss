@@ -30,3 +30,16 @@
   color: #ffff99;
   font-size: 15px;
 }
+.button
+{
+  position: absolute;
+  right: 5%;
+  top:14%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #ffff99;
+  box-shadow: -1px 0px 25px #ffff99;
+  padding: unset;
+  line-height: 58px;
+}

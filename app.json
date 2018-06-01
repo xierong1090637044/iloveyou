@@ -8,7 +8,7 @@
   },
   "tabBar": {
     "color":"#fff",
-    "selectedColor":"#ffcccc",
+    "selectedColor":"#660000",
     "backgroundColor":"#2ca879",
     "list": [
       {
@@ -21,7 +21,7 @@
         "pagePath": "pages/qingshu/qingshu",
         "iconPath": "images/qingshu.png",
         "selectedIconPath": "images/qingshu1.png",
-        "text": "首页"
+        "text": "一行情书"
       }
     ]
   },

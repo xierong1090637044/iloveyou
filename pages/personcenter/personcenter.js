@@ -7,8 +7,9 @@ Page({
   data: {
     width:'',
     height:'',
-   display:'',
-   userInfo:'',
+    display:'',
+    display1:'none',
+    userInfo:'',
   },
   onLoad: function () {
     var that = this;
@@ -41,7 +42,8 @@ Page({
               console.log(res.userInfo)
               that.setData({
                 userInfo: res.userInfo,
-                display:'none'
+                display:'none',
+                display1: 'show',
               })
             }
           })
@@ -63,10 +65,33 @@ Page({
 
   onGotUserInfo: function (e) {
     var that = this;
-    console.log(e.detail.userInfo)
+    var userinfor = e.detail.userInfo;
     that.setData({
-      userInfo: e.detail.userInfo,
-      display: 'none'
+      userInfo: userinfor,
+      display: 'none',
+      display1: 'show',
     })
+    var Diary = Bmob.Object.extend("user_infor");
+    var query = new Bmob.Query(Diary);
+    query.equalTo("openid", wx.getStorageSync('openid'));
+    query.find({
+      success: function (results) {
+        if (results.length ==0)
+        {
+          var User = Bmob.Object.extend("user_infor");
+          var user = new User();
+          user.set("openid", wx.getStorageSync('openid'));
+          user.set("nickname", userinfor.nickName);
+          user.set("avatarurl", userinfor.avatarUrl);
+          user.set("sex", userinfor.gender);
+          user.save();
+        }
+        else{
+          return
+        }
+      },
+    });
+    
   },
+
 })
