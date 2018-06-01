@@ -1,0 +1,67 @@
+.g-bda-userinfo {
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  background: #00BBFF;
+  position: relative;
+}
+.userinfo-avatar {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+  margin-top: 8px;
+  margin-bottom: 8rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.userinfo-nickname{
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  width: 35%;
+  text-overflow:hidden;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.weather
+{
+  float:right;
+  position: absolute;
+  top: 29rpx;
+  right:13rpx;
+  font-size: 29rpx;
+}
+.userpic
+{
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+  margin-top: 8px;
+  margin-bottom: 8rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.list
+{
+  width: 100%;
+  margin-top: 15vh;
+  text-align: center;
+}
+.contact_us
+{
+  width: 50%;
+  height: 55rpx;
+  margin-left: 25%;
+  border-bottom: 1px solid #000;
+}
+.about_us
+{
+  width: 50%;
+  height: 55rpx;
+  margin-left: 25%;
+  border-bottom: 1px solid #000;
+  margin-top: 80rpx;
+}
+
