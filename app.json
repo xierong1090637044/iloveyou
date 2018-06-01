@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/personcenter/personcenter",
-    "pages/qingshu/qingshu"
+    
+    "pages/qingshu/qingshu",
+    "pages/personcenter/personcenter"
   ],
   "window": {
     "enablePullDownRefresh": true
