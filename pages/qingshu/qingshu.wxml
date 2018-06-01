@@ -1,6 +1,6 @@
 <!--pages/qingshu/qingshu.wxml-->
 <view class='content'>
-  
+  <!--头部-->
   <view style='float:right;width:95%;padding:6px'>
    <view bindtap='edit'>
      <image src='../../images/love.png' class='love'></image>
@@ -12,4 +12,10 @@
    </view>
   </view>
 
+  <!--写情书-->
+  <view class='content1'>
+     <text class='text1'>一行情书</text>
+     <textarea placeholder="输入内容" class='textarea' adjust-position='false' maxlength='150' placeholder-style='color:#fff'/>
+  </view>
+  
 </view>

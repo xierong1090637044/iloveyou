@@ -25,3 +25,13 @@
   float: right;
   margin-top: 5px;
 }
+.textarea
+{
+  width: 100%;
+  font-size: 15px;
+}
+.content1
+{
+  text-align: center;
+  color: #fff;
+}
