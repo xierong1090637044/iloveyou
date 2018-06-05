@@ -25,7 +25,6 @@ Page({
     var that = this;
    //查询一行情书表
 
-     if(wx.getStorageSync('qingshu')==''){
        var Diary = Bmob.Object.extend("qingshu");
        var query = new Bmob.Query(Diary);
        query.limit(20);
@@ -33,19 +32,26 @@ Page({
        query.find({
          success: function (results) {
            console.log("共查询到 " + results.length + " 条记录");
-           wx.setStorageSync('qingshu',results)
-           that.setData({ qingshu: wx.getStorageSync('qingshu') })
-           /*for (var i = 0; i < results.length; i++) {
-             var object = results[i];
-             console.log(object.id);
-           }*/
+           wx.setStorageSync('qingshu', results)
+           that.setData
+             ({
+               qingshu: wx.getStorageSync('qingshu'),
+             })
+           var qingshu = that.data.qingshu;
+           console.log(qingshu)
+           var islike = wx.getStorageSync('islike');
+           for (var j in islike) {
+             let currentIndex = qingshu.findIndex(item => item.objectId === islike[j]);
+             console.log(currentIndex)
+             if (currentIndex==-1){}else{
+               that.setData({
+                 ['qingshu[' + currentIndex + '].added']: true
+               });
+             }
+           }
+           wx.setStorageSync('qingshu', qingshu)
          },
        }); 
-     }else
-     {
-       that.setData({ qingshu: wx.getStorageSync('qingshu') })
-     }
-      
   },
 
   /**
@@ -132,10 +138,11 @@ Page({
               var islike = wx.getStorageSync('islike');
               for (var j in islike) {
                 let currentIndex = id.findIndex(item => item === islike[j]);
-                that.setData({
-                  ['qingshu[' + currentIndex + '].added']: true
-                });
-
+                if(currentIndex==-1){}else{
+                  that.setData({
+                    ['qingshu[' + currentIndex + '].added']: true
+                  });
+                }
               }
               wx.setStorageSync('qingshu', qingshu)
               console.log(id)
@@ -232,10 +239,11 @@ Page({
                   var islike = wx.getStorageSync('islike');
                   for (var j in islike) {
                     let currentIndex = id.findIndex(item => item === islike[j]);
-                    that.setData({
-                      ['qingshu[' + currentIndex + '].added']: true
-                    });
-
+                    if(currentIndex==-1){}else{
+                      that.setData({
+                        ['qingshu[' + currentIndex + '].added']: true
+                      });
+                    }
                   }
                   wx.setStorageSync('qingshu', qingshu)
                   console.log(id)
@@ -333,6 +341,21 @@ Page({
     if (islikenub.includes(id))
     {
       console.log('你已经点赞过了')
+      that.setData({
+        ['qingshu[' + currentIndex + '].added']: false,
+        ['qingshu[' + currentIndex + '].islike']: qingshu[currentIndex].islike-1
+      });
+
+      //在数据库里减少点赞数
+      var Diary = Bmob.Object.extend("qingshu");
+      var query = new Bmob.Query(Diary);
+      query.get(id, {
+        success: function (result) {
+          result.set('islike', qingshu[currentIndex].islike);
+          result.save();
+        },
+      });
+
       var m = 0;
       for (var j in islikenub) {
         if (islikenub[j] != id) {
@@ -342,8 +365,21 @@ Page({
       }
       wx.setStorageSync('islike', newmessage);//删除取消赞的mid
     }else{
+      that.setData({
+        ['qingshu[' + currentIndex + '].islike']: qingshu[currentIndex].islike + 1
+      });
       islikenub.unshift(id)
       wx.setStorageSync('islike', islikenub)
+
+      //在数据库里增加点赞数
+      var Diary = Bmob.Object.extend("qingshu");
+      var query = new Bmob.Query(Diary);
+      query.get(id, {
+        success: function (result) {
+          result.set('islike', qingshu[currentIndex].islike);
+          result.save();
+        },
+      });
     }
   }
 
