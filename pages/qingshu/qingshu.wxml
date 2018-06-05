@@ -1,21 +1,63 @@
 <!--pages/qingshu/qingshu.wxml-->
-<view class='content'>
+<scroll-view class='content' scroll-y bindscrolltolower='load'>
   <!--头部-->
-  <view style='float:right;width:95%;padding:6px'>
+  <view style='float:right;width:99.5%;padding:1px;background:#ff9999;margin-bottom:10px'>
    <view bindtap='edit'>
      <image src='../../images/love.png' class='love'></image>
-     <view class='text'>写一封情书</view>
+     <view class='text'>创建</view>
    </view>
-   <view>
-   <view style='float:right;color:#fff;line-height:40px;margin-left:5px;margin-right:5px'>按热度</view>
+   <view bindtap='paixu'>
+   <view style='float:right;color:#fff;line-height:40px;margin-left:5px;margin-right:5px;'  class="{{tapIndex==0?'showing':'hidden'}}">热度</view>
+   <view style='float:right;color:#fff;line-height:40px;margin-left:5px;margin-right:5px;' class="{{tapIndex==1?'showing':'hidden'}}">时间</view>
    <image src='../../images/paixu.png' class='paixu'></image>
    </view>
   </view>
 
-  <!--写情书-->
-  <view class='content1'>
-     <text class='text1'>一行情书</text>
-     <textarea placeholder="输入内容" class='textarea' adjust-position='false' maxlength='150' placeholder-style='color:#fff'/>
+  <!--一行情书列表-->
+  <view wx:for='{{qingshu}}' wx:key='{{index}}' style='float:left;width:97%;padding:5px'>
+   <view class='backgroundimg'>
+      <image src='../../images/{{item.random}}.png' class='backgroundimg1'></image>
+      <view class='islike' bindtap='islike' data-id='{{item.objectId}}' data-number='{{item.islike}}'>
+         <image wx:if="{{item.added}}" src='../../images/islike1.png' class="islikeimg"></image>
+         <image wx:else src='../../images/islike.png' class="islikeimg"></image>
+         <view class='islikenub'>{{item.islike}}</view>
+      </view>
+   </view>
+   <view class='fengmian' style='background:{{item.backgroundcolor}}'>
+      <view style='color:{{item.textcolor}}' class='textcontent'><text>{{item.content}}</text></view>
+      <view class='name'>{{item.name}}</view>
+      <view class='time'>{{item.createdAt}}</view>
+   </view>
   </view>
+
+  <!--创建一行情书-->
+     <view class='mask' style='display:{{display}}' bindtap='hidden'></view>
+     <view class='maincontent' style='display:{{display}}'>
+     <text class='text1'>一行情书</text>
+     <form bindsubmit="bindFormSubmit">
+         <textarea placeholder="输入内容" class='textarea' adjust-position='false' maxlength='150' placeholder-style='color:#888;' name="textarea" bindinput='input' style='background:{{background}};color:{{textcolor}}'/>
+         <view class='length'>{{length}}/150</view>
+         <input placeholder="你的名字" name='name' class='inputname' placeholder-style='width:100%;font-size:10px'></input>
+         <view style='float:left;line-height:36px; color:#888;margin-left:5px;font-size:15px'>(可不填）</view>
+         <view style='float:left;width:100%'>
+         <view class='sec-color'>背景色</view>
+           <view class='yanse1' data-color='#e6755b' bindtap='backgroundcolor'></view>
+           <view class='yanse2' data-color='#ffa200' bindtap='backgroundcolor'></view>
+           <view class='yanse3' data-color='#2ca879' bindtap='backgroundcolor'></view>
+           <view class='yanse4' data-color='#00a2ff' bindtap='backgroundcolor'></view>
+         </view>
+         <view style='float:left;width:100%'>
+           <view class='sec-color'>文字色</view>
+           <view class='yanse5' data-color='#fff' bindtap='textcolor'></view>
+           <view class='yanse6' data-color='#000' bindtap='textcolor'></view>
+           <view class='yanse7' data-color='#f000ff' bindtap='textcolor'></view>
+           <view class='yanse8' data-color='#9593e3' bindtap='textcolor'></view>
+         </view>
+         <view style='float:left;width:100%;margin-bottom:10px;margin-top:10px'>
+           <button class='submit' bindtap='giveout'> 取消 </button>
+           <button form-type="submit" class='submit1'> 提交 </button>
+         </view>
+      </form>
+     </view>
   
-</view>
+</scroll-view>

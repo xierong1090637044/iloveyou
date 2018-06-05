@@ -1,0 +1,18 @@
+<!--pages/tellyou/tellyou.wxml-->
+<view class='headerbg'>
+  <view class='inputstyle'>
+     <view class='icon'>
+     <icon type="search" size="15" color="#fff"/>
+     </view>
+    <input placeholder='搜索' placeholder-style='font-size:15px;' class='input' bindconfirm='search' bindinput='input'></input>
+  </view>
+</view>
+<view class='mask' style='display:none'></view>
+<view style='display:none'>
+<form bindsubmit="bindFormSubmit">
+   <input placeholder='他/她的名字' placeholder-style='font-size:15px;' class='input' bindconfirm='getname' bindinput='input'></input>
+   <input placeholder='他/她的名字' placeholder-style='font-size:15px;' class='input' bindconfirm='getname' bindinput='input'></input>
+</form>
+</view>
+
+<image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/06/04/e030343d40638ef8808a26a1d2976875.png'  class='backimg'></image>

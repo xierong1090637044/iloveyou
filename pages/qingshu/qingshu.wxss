@@ -3,7 +3,11 @@
 {
   width: 100%;
   height: 100vh;
-  background: #ff6699
+  float: left;
+  background: #003333;
+  overflow: scroll;
+  scrollbar-base-color: #fff;
+  scrollbar-face-color: #fff;
 }
 .love
 {
@@ -20,18 +24,236 @@
 }
 .paixu
 {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   float: right;
-  margin-top: 5px;
+  margin-top: 10px;
+}
+.mask
+{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.7;
+  z-index: 1;
+}
+.maincontent
+{
+  position: fixed;
+  z-index: 10;
+  width: 60vw;
+  left: 15vw;
+  top:10vw;
+  padding:5vw;
+  padding-bottom: unset;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
 }
 .textarea
 {
-  width: 100%;
+  width: 90%;
   font-size: 15px;
+  background: #fff;
+  text-align: left;
+  border: 1px solid#000;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .content1
 {
   text-align: center;
   color: #fff;
+}
+.text1
+{
+  color: #000;
+}
+.length
+{
+   float: right;
+   line-height: 36px;
+   color: #8f0000;
+}
+.inputname
+{
+  border: 1px solid#000;
+  border-radius: 20px;
+  height: 30px;
+  width: 20vw;
+  float: left;
+  overflow: unset;
+  text-overflow: unset;
+  font-size: 15px;
+}
+.submit
+{
+  float: left;
+  width: 45%;
+  background: #727272;
+  color: #fff;
+}
+.submit1
+{
+  float: right;
+  width: 45%;
+  margin-right: 5px;
+  background: #971c1c;
+  color: #fff;
+}
+.fengmian
+{
+  float: right;
+  width: 60%;
+  font-size: 15px;
+  border: 1px solid#000;
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.textcontent
+{
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid#fff;
+  text-align: left;
+}
+.name
+{
+  float: right;
+  text-align: right;
+  font-size: 10px;
+}
+.time
+{
+  float: left;
+  font-size: 10px;
+}
+.yanse1
+{
+  background: #e6755b;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 5px;
+  display: inline-block;
+  border: 1px solid#000;
+}
+.yanse2
+{
+  margin-left: 5px;
+  background: #ffa200;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+   display: inline-block;
+   border: 1px solid#000;
+}
+.yanse3
+{
+  margin-left: 5px;
+  background: #2ca879;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+   display: inline-block;
+   border: 1px solid#000;
+}
+.yanse4
+{
+  margin-left: 5px;
+  background: #00a2ff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid#000;
+   display: inline-block
+}
+.yanse5
+{
+  margin-left: 5px;
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid#000;
+  display: inline-block
+}
+.yanse6
+{
+  margin-left: 5px;
+  background: #000;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid#000;
+   display: inline-block
+}
+.yanse7
+{
+  margin-left: 5px;
+  background: #f000ff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid#000;
+   display: inline-block
+}
+.yanse8
+{
+  margin-left: 5px;
+  background: #9593e3;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid#000;
+   display: inline-block
+}
+.sec-color
+{
+  float: left;
+  line-height: 36px;
+}
+.backgroundimg
+{
+  float: left;
+  margin-top: 10px;
+}
+.backgroundimg1
+{
+  width: 80px;
+  height: 50px;
+}
+.showing
+{
+  display:block;
+}
+.hidden
+{
+  display:none;
+}
+.islike
+{
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+.islikeimg
+{
+  width: 30px;
+  height: 30px;
+}
+.islikenub
+{
+  margin-top: -38%;
+  color: #ccffcc;
+  font-size: 10px;
 }

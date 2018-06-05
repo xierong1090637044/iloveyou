@@ -1,16 +1,17 @@
 {
   "pages": [
-    
     "pages/qingshu/qingshu",
+    "pages/tellyou/tellyou",
+    
     "pages/personcenter/personcenter"
   ],
   "window": {
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "tabBar": {
-    "color":"#fff",
-    "selectedColor":"#660000",
-    "backgroundColor":"#2ca879",
+    "color": "#fff",
+    "selectedColor": "#660000",
+    "backgroundColor": "#2ca879",
     "list": [
       {
         "pagePath": "pages/personcenter/personcenter",
@@ -23,6 +24,12 @@
         "iconPath": "images/qingshu.png",
         "selectedIconPath": "images/qingshu1.png",
         "text": "一行情书"
+      },
+      {
+        "pagePath": "pages/tellyou/tellyou",
+        "iconPath": "images/bbq.png",
+        "selectedIconPath": "images/bbq1.png",
+        "text": "若有相思"
       }
     ]
   },

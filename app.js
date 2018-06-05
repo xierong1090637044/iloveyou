@@ -1,4 +1,7 @@
 var Bmob = require('utils/bmob.js')
+if (!Array.prototype.findIndex) {
+  require('./utils/array-findIndex')
+}
 // var BmobSocketIo = require('utils/bmobSocketIo.js').BmobSocketIo;
 // const BmobSocketIo = require('utils/tunnel');
 Bmob.initialize(

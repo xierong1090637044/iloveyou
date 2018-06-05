@@ -13,6 +13,19 @@ Page({
   },
   onLoad: function () {
     var that = this;
+
+    //查询获得用户的objectid
+    var Diary = Bmob.Object.extend("user_infor");
+    var query = new Bmob.Query(Diary);
+    query.equalTo("openid", wx.getStorageSync('openid'));
+    query.find({
+      success: function (results) {
+        console.log("共查询到 " + results.length + " 条记录");
+        var object = results[0];
+        wx.setStorageSync('user_id', object.id)
+      }
+    });
+
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -39,7 +52,7 @@ Page({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
             success: function (res) {
-              console.log(res.userInfo)
+              console.log(res.userInfo.nickName)
               that.setData({
                 userInfo: res.userInfo,
                 display:'none',
@@ -63,6 +76,7 @@ Page({
     this.wxCanvas.clear(); //推荐这个
   },
 
+  //获得用户的信息并保存在数据库
   onGotUserInfo: function (e) {
     var that = this;
     var userinfor = e.detail.userInfo;
@@ -84,7 +98,12 @@ Page({
           user.set("nickname", userinfor.nickName);
           user.set("avatarurl", userinfor.avatarUrl);
           user.set("sex", userinfor.gender);
-          user.save();
+          user.save(null,{
+            success: function (result) {
+              console.log("登录成功, objectId:" + result.id);
+              wx.setStorageSync('user_id', result.id)
+            },
+          });
         }
         else{
           return
