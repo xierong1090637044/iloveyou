@@ -96,14 +96,18 @@
   width: 45%;
   background: #727272;
   color: #fff;
+  line-height: 32px;
+  font-size: 15px;
 }
 .submit1
 {
+  font-size: 15px;
   float: right;
   width: 45%;
   margin-right: 5px;
   background: #971c1c;
   color: #fff;
+  line-height: 32px;
 }
 .fengmian
 {
@@ -139,10 +143,10 @@
 .yanse1
 {
   background: #e6755b;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  margin-left: 5px;
+  margin-top: 9px;
   display: inline-block;
   border: 1px solid#000;
 }
@@ -150,8 +154,8 @@
 {
   margin-left: 5px;
   background: #ffa200;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
    display: inline-block;
    border: 1px solid#000;
@@ -160,8 +164,8 @@
 {
   margin-left: 5px;
   background: #2ca879;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
    display: inline-block;
    border: 1px solid#000;
@@ -170,18 +174,18 @@
 {
   margin-left: 5px;
   background: #00a2ff;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1px solid#000;
    display: inline-block
 }
 .yanse5
 {
-  margin-left: 5px;
+  margin-top: 9px;
   background: #fff;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1px solid#000;
   display: inline-block
@@ -190,8 +194,8 @@
 {
   margin-left: 5px;
   background: #000;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1px solid#000;
    display: inline-block
@@ -200,8 +204,8 @@
 {
   margin-left: 5px;
   background: #f000ff;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1px solid#000;
    display: inline-block
@@ -210,14 +214,15 @@
 {
   margin-left: 5px;
   background: #9593e3;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1px solid#000;
    display: inline-block
 }
 .sec-color
 {
+  font-size: 15px;
   float: left;
   line-height: 36px;
 }

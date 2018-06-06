@@ -1,0 +1,16 @@
+/* pages/bbqdetails/bbqdetails.wxss */
+.header
+{
+  background: rgb(220, 162, 151);
+  height:15vh;
+}
+.button
+{
+  width: 30%;
+  font-size: 13px;
+  background-color: #fff !important;
+  color: #000 !important;
+  margin-top:6%;
+  float: left;
+  margin-left: 35%;
+}

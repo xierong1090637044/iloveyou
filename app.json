@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/qingshu/qingshu",
     "pages/tellyou/tellyou",
-    
-    "pages/personcenter/personcenter"
+    "pages/qingshu/qingshu",
+    "pages/personcenter/personcenter",
+    "pages/bbqdetails/bbqdetails"
   ],
   "window": {
     "enablePullDownRefresh": false

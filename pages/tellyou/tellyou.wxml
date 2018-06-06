@@ -4,15 +4,72 @@
      <view class='icon'>
      <icon type="search" size="15" color="#fff"/>
      </view>
-    <input placeholder='搜索' placeholder-style='font-size:15px;' class='input' bindconfirm='search' bindinput='input'></input>
+    <input placeholder='搜索' placeholder-style='font-size:15px;' class='input' bindconfirm='search' bindinput='searchinput'></input>
   </view>
-</view>
-<view class='mask' style='display:none'></view>
-<view style='display:none'>
-<form bindsubmit="bindFormSubmit">
-   <input placeholder='他/她的名字' placeholder-style='font-size:15px;' class='input' bindconfirm='getname' bindinput='input'></input>
-   <input placeholder='他/她的名字' placeholder-style='font-size:15px;' class='input' bindconfirm='getname' bindinput='input'></input>
-</form>
 </view>
 
 <image src='http://bmob-cdn-18174.b0.upaiyun.com/2018/06/04/e030343d40638ef8808a26a1d2976875.png'  class='backimg'></image>
+
+<!--去创建 -->
+<view class='textdec' style='display:{{cjdisplay}}'>
+   <text style='font-size:15px'>还没有他/她的表白墙</text>
+    <text class='textcj' bindtap='gotocj'>去创建</text>
+</view>
+
+<!--点击创建弹出 -->
+<view class='mask' style='display:{{display}}' bindtap='giveout'></view>
+     <view class='maincontent' style='display:{{display}}'>
+     <text class='text1'>若有相思</text>
+     <form bindsubmit="bindFormSubmit">
+     <input  name='name' class='inputname' disabled='true' value='{{searchinputvalue}}'></input>
+         <textarea placeholder="输入想对他/她说的话即可创建关于他/她的表白墙" class='textarea' adjust-position='false' maxlength='80' placeholder-style='color:#888;' name="textarea" bindinput='input' style='background:{{background}};color:{{textcolor}}'/>
+         <view style='float:left;width:100%'>
+         <view class='sec-color'>背景色</view>
+           <view class='yanse1' data-color='#339966' bindtap='backgroundcolor'></view>
+           <view class='yanse2' data-color='#ccffff' bindtap='backgroundcolor'></view>
+           <view class='yanse3' data-color='#339999' bindtap='backgroundcolor'></view>
+           <view class='yanse4' data-color='#cccc99' bindtap='backgroundcolor'></view>
+         </view>
+         <view style='float:left;width:100%'>
+           <view class='yanse11' data-color='#ffffcc' bindtap='backgroundcolor'></view>
+           <view class='yanse22' data-color='#996666' bindtap='backgroundcolor'></view>
+           <view class='yanse33' data-color='#ccffcc' bindtap='backgroundcolor'></view>
+           <view class='yanse44' data-color='#66cc99' bindtap='backgroundcolor'></view>
+         </view>
+         <view style='float:left;width:100%'>
+           <view class='sec-color'>文字色</view>
+           <view class='yanse5' data-color='#fff' bindtap='textcolor'></view>
+           <view class='yanse6' data-color='#000' bindtap='textcolor'></view>
+           <view class='yanse7' data-color='#cc3333' bindtap='textcolor'></view>
+           <view class='yanse8' data-color='#0033cc' bindtap='textcolor'></view>
+         </view>
+         <view style='float:left;width:100%'>
+         <view style='float:left;font-size:15px;margin-top:5px'>是否私密</view>
+         <switch checked bindchange="switch1Change" type='checkbox' style='float:right;margin-right:5px' color='#cc3333'/>
+         </view>
+         <view style='float:left;width:100%;margin-bottom:10px;margin-top:10px'>
+           <button class='submit' bindtap='giveout'> 取消 </button>
+           <button form-type="submit" class='submit1'> 提交 </button>
+         </view>
+      </form>
+     </view>
+
+  <view class='content'style='display:{{contentdisplay}}'>
+  <view class='secheader'>
+     <view class='bbqname'>名字</view>
+     <view class='bbqislike'>被表白</view>
+     <view class='bbqcansee'>是否可见</view>
+  </view>
+  <view wx:for="{{bbq}}" wx:key='{{index}}' >
+     <view class='secheader'>
+       <view class='bbqname'>{{item.name}}</view>
+       <view class='bbqislike'>{{item.islike}}</view>
+       <view wx:if='{{item.cansee}}' class='busee'>
+       不可见
+       </view>
+       <view wx:else class='cansee'>
+         <navigator url="/pages/bbqdetails/bbqdetails?title={{item.objectId}}">可见</navigator>
+       </view>
+     </view>
+  </view>
+  </view>

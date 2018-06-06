@@ -1,4 +1,7 @@
 /* pages/tellyou/tellyou.wxss */
+page{
+  position: relative
+}
 .headerbg
 {
   width: 100%;
@@ -35,11 +38,335 @@
   margin-left: 8px;
   padding: 3px;
 }
+.textdec
+{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 30vh;
+  left: 0;
+}
+.textcj
+{
+  margin-left: 5px;
+  color: rgb(18, 53, 85)
+}
+
 .mask
 {
   position: fixed;
+  top:0%;
   width: 100%;
   height: 100%;
   background: #000;
-  opacity: 0.7
+  opacity: 0.7;
+  z-index: 100;
+}
+.maincontent
+{
+  position: fixed;
+  z-index: 1000;
+  width: 60vw;
+  left: 15vw;
+  top:10vw;
+  padding:5vw;
+  padding-bottom: unset;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+.textarea
+{
+  width: 90%;
+  float: left;
+  font-size: 15px;
+  background: #fff;
+  text-align: left;
+  border: 1px solid#000;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+.content1
+{
+  text-align: center;
+  color: #fff;
+}
+.text1
+{
+  color: #000;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+.length
+{
+   float: right;
+   line-height: 36px;
+   color: #8f0000;
+}
+.inputname
+{
+  border: 1px solid#000;
+  border-radius: 20px;
+  height: 30px;
+  width: 20vw;
+  float: left;
+  overflow: unset;
+  text-overflow: unset;
+  font-size: 15px;
+  margin-left: 20vw;
+  margin-top: 10px;
+}
+.submit
+{
+  float: left;
+  width: 45%;
+  background: #727272;
+  color: #fff;
+  line-height: 32px;
+  font-size: 15px
+}
+.submit1
+{
+  float: right;
+  width: 45%;
+  margin-right: 5px;
+  background: #971c1c;
+  color: #fff;
+  line-height: 32px;
+  font-size: 15px
+}
+.fengmian
+{
+  float: right;
+  width: 60%;
+  font-size: 15px;
+  border: 1px solid#000;
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.textcontent
+{
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid#fff;
+  text-align: left;
+}
+.name
+{
+  float: right;
+  text-align: right;
+  font-size: 10px;
+}
+.time
+{
+  float: left;
+  font-size: 10px;
+}
+.yanse1
+{
+  float: right;
+  background: #339966;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: 9px;
+  border-radius: 50%;
+  border: 1px solid#000;
+}
+.yanse2
+{
+  float: right;
+    margin-left: 5px;
+  margin-top: 9px;
+  background: #ccffff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+   border: 1px solid#000;
+}
+.yanse3
+{
+  float: right;
+  margin-left: 5px;
+  margin-top: 9px;
+  background: #339999;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+   border: 1px solid#000;
+}
+.yanse4
+{
+  float: right;
+  margin-left: 5px;
+  margin-top: 9px;
+  background: #cccc99;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid#000;
+}
+.yanse11
+{
+  float: right;
+  background: #ffffcc;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid#000;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+.yanse22
+{
+  float: right;
+  background: #996666;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+   border: 1px solid#000;
+   margin-left: 5px;
+  margin-top: 2px;
+}
+.yanse33
+{
+  float: right;
+  background: #ccffcc;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+   border: 1px solid#000;
+   margin-left: 5px;
+  margin-top: 2px;
+}
+.yanse44
+{
+  float: right;
+  margin-left: 5px;
+  margin-top: 2px;
+  background: #66cc99;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid#000;
+}
+.yanse5
+{
+  float: right;
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid#000;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.yanse6
+{
+  float: right;
+  background: #000;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid#000;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.yanse7
+{
+  float: right;
+  margin-left: 5px;
+  margin-top: 5px;
+  background: #cc3333;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid#000;
+}
+.yanse8
+{
+  float: right;
+  margin-left: 5px;
+  margin-top: 5px;
+  background: #0033cc;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid#000;
+}
+.sec-color
+{
+  float: left;
+  line-height: 36px;
+}
+.backgroundimg
+{
+  float: left;
+  margin-top: 10px;
+}
+.backgroundimg1
+{
+  width: 80px;
+  height: 50px;
+}
+.showing
+{
+  display:block;
+}
+
+.content
+{
+  position: absolute;
+  top:20vh;
+  left: 0;
+  width: 98%;
+  padding: 4px;
+}
+.secheader
+{
+  float: left;
+  width: 98%;
+  border-bottom: 1px solid#efefef;
+  padding: 4px;
+  font-size: 15px;
+}
+.bbqname
+{
+  float:left;
+  width: 50%;
+}
+.bbqislike
+{
+  float: left;
+  width: 30%;
+}
+.bbqcansee
+{
+  float: right;
+  width: 20%;
+}
+.cansee
+{
+  width: 20%;
+  text-align: center;
+  float: left;
+  font-size: 15px;
+  color: #3333cc;
+}
+.busee
+{
+  width: 20%;
+  text-align: center;
+  float: left;
+  font-size: 15px;
+  color: #999;
 }

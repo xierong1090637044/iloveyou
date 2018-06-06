@@ -1,0 +1,11 @@
+<!--pages/bbqdetails/bbqdetails.wxml-->
+<view class='header'>
+  <button plain='false' class='button' bindtap='loadfile' style='display:{{butdisplay}}'>上传主题图片   </button>
+  <image src='{{avatar}}' style='display:{{imgdisplay}}'></image>
+</view>
+
+<view class='background'>
+  <view wx:for='{{content}}' wx:key='{{index}}'>
+  {{item.content}}
+  </view>
+</view>
